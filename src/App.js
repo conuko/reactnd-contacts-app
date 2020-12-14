@@ -4,7 +4,7 @@ import ListContacts from './ListContacts';
 
 
 class App extends Component {
-  state = {
+  state = { // set the initial state directly without a constructor() method
     contacts: [
       {
         "id": "karen",
@@ -38,8 +38,8 @@ class App extends Component {
     return (
       <div>
         <ListContacts
-          contacts={this.state.contacts}  /* pass our contacts array as a prop to our ListContacts Component*/
-          onDeleteContact={this.removeContact}
+          contacts={this.state.contacts}  // pass our contacts array as a prop to our ListContacts Component
+          onDeleteContact={this.removeContact} // pass the removeContact function to our ListContacts Component
         />
       </div>
     );
