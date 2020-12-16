@@ -38,8 +38,8 @@ class App extends Component {
     return (
       <div>
         <ListContacts
-          contacts={this.state.contacts}  // pass our contacts array as a prop to our ListContacts Component
-          onDeleteContact={this.removeContact} // pass the removeContact function to our ListContacts Component
+          contacts={this.state.contacts}  // pass our contacts array (the State) to our ListContacts Component
+          onDeleteContact={this.removeContact} // pass the removeContact function (the setState) to our ListContacts Component
         />
       </div>
     );
