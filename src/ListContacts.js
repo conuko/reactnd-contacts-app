@@ -45,12 +45,12 @@ class ListContacts extends Component {
         </div>
 
 
-        // If Contacts we are showing is not the same list as my contacts list, I render the following div:
-        // Shows in the UI, how many of all our contacts we are showing:
+        {/* If Contacts we are showing is not the same list as my contacts list, I render the following div: */}
+        {/* Shows in the UI, how many of all our contacts we are showing: */}
         {showingContacts.length !== contacts.length && (
           <div className='showing-contacts'>
             <span>Now showing {showingContacts.length} of {contacts.length}</span>
-            // Creat a button which clears the filtered contacts and resets the UI to all our contacts:
+            {/* Creat a button which clears the filtered contacts and resets the UI to all our contacts: */}
             <button onClick={this.clearQuery}>Show all</button>
           </div>
         )}
