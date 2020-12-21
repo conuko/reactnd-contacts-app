@@ -25,7 +25,7 @@ class ListContacts extends Component {
     const showingContacts = query === ''
       ? contacts
       : contacts.filter((c) => (
-          c.name.toLowerCase().includes(query.toLowerCase())
+          c.name.toLowerCase().includes(query.toLowerCase()) /* when the user types in some name, our app shows just the contacts in the UI which name is equal with the type in name. */
         ))
 
     return (
