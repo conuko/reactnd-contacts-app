@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
 
 class ListContacts extends Component {
   static propTypes = {
@@ -38,12 +37,7 @@ class ListContacts extends Component {
             value={query}
             onChange={(event) => this.updateQuery(event.target.value)}
           />
-          <Link
-            to='/create'
-            className='add-contact'
-          >Add Contact</Link>
         </div>
-
 
         {/* If Contacts we are showing is not the same list as my contacts list, I render the following div: */}
         {/* Shows in the UI, how many of all our contacts we are showing: */}
@@ -54,7 +48,6 @@ class ListContacts extends Component {
             <button onClick={this.clearQuery}>Show all</button>
           </div>
         )}
-
 
         <ol className='contact-list'>
           {showingContacts.map((contact) => (
