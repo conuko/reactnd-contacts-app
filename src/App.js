@@ -8,7 +8,7 @@ import CreateContact from './CreateContact';
 class App extends Component {
   state = { // set the initial state directly without a constructor() method
     contacts: [],
-    screen: 'create'
+    screen: 'list'
   }
 
  /*  
@@ -40,6 +40,11 @@ class App extends Component {
         <ListContacts
           contacts={this.state.contacts}  // pass our contacts array (the State) to our ListContacts Component
           onDeleteContact={this.removeContact} // pass the removeContact function (the setState) to our ListContacts Component
+          onNavigate={() => {
+            this.setState(() => ({
+              screen: 'create'
+            }))
+          }}
         />
       )}
       {this.state.screen === 'create' && (
