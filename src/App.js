@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import ListContacts from './ListContacts';
 import * as ContactsAPI from './utils/ContactsAPI';
 import CreateContact from './CreateContact';
+import { Route } from 'react-router-dom';
 
 
 
 class App extends Component {
   state = { // set the initial state directly without a constructor() method
-    contacts: [],
-    screen: 'list'
+    contacts: []
   }
 
  /*  
@@ -36,20 +36,14 @@ class App extends Component {
   render() {
     return (
       <div>
-      {this.state.screen === 'list' && (
-        <ListContacts
-          contacts={this.state.contacts}  // pass our contacts array (the State) to our ListContacts Component
-          onDeleteContact={this.removeContact} // pass the removeContact function (the setState) to our ListContacts Component
-          onNavigate={() => {
-            this.setState(() => ({
-              screen: 'create'
-            }))
-          }}
+        <Route exact path='/' render={() => (
+          <ListContacts
+            contacts={this.state.contacts}  // pass our contacts array (the State) to our ListContacts Component
+            onDeleteContact={this.removeContact} // pass the removeContact function (the setState) to our ListContacts Componen
+          />
+        )} />
+        <Route path='/create' component={CreateContact}
         />
-      )}
-      {this.state.screen === 'create' && (
-        <CreateContact />
-      )}
       </div>
     );
   }
